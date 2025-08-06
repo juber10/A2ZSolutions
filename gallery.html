@@ -6,6 +6,14 @@
   <title>Gallery Viewer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #1e293b;
+      --accent: #3b82f6;
+      --text: #f8fafc;
+      --subtext: #94a3b8;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -14,11 +22,24 @@
     }
 
     header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       text-align: center;
       padding: 1.5rem;
       background: #1e1e1e;
-      font-size: 1.5rem;
+      font-size: 1rem;
       letter-spacing: 1px;
+      z-index: 999;
+    }
+    nav a {
+      color: var(--text);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--accent);
     }
 
     .gallery {
@@ -105,6 +126,21 @@
 
 
     @media (max-width: 600px) {
+      header{
+        font-size: medium;
+        width: auto;
+      }
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 400px){
+      header{
+        font-size: small;
+        width: auto;
+      }
       .gallery {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -115,6 +151,9 @@
 
 <header>
   📸 Video & Image Gallery
+  <nav class="nav">
+    <a href="broadcast-index.html" target="_blank">Home</a>
+  </nav>
 </header>
 
 <section class="gallery">
@@ -123,7 +162,10 @@
     <img src="resources/Accessories-images/125x ground.png" alt="Gallery Image 1" data-title="LLC 2024">
   </div>
   <div class="gallery-item">
-    <img src="image2.jpg" alt="Gallery Image 2" data-title="A beautiful landscape">
+    <img src="resources/Accessories-images/Events 1.jpg" alt="Gallery Image 2" data-title="A beautiful landscape">
+  </div>
+   <div class="gallery-item">
+    <img src="resources/Accessories-images/IMG_4654.JPG" alt="Gallery Image 2" data-title="A beautiful landscape">
   </div>
 
   <!-- Videos -->
@@ -140,11 +182,15 @@
 
   <!-- More items -->
   <div class="gallery-item">
-    <img src="image3.jpg" alt="Gallery Image 3" data-title="A beautiful landscape">
+    <video autoplay muted loop>
+      <source src="hexagon/videos/v3.mp4" type="video/mp4" data-title="A beautiful landscape">
+    </video>
   </div>
   <div class="gallery-item">
-    <img src="image4.jpg" alt="Gallery Image 4" data-title="A beautiful landscape">
-  </div>
+    <video autoplay muted loop>
+      <source src="hexagon/videos/v4.mp4" type="video/mp4" data-title="A beautiful landscape">
+    </video>
+    </div>
 </section>
 <!-- Lightbox Overlay -->
 <div class="lightbox" id="lightbox">
