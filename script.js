@@ -1,3 +1,74 @@
+
+// Intro splash fade-out
+window.addEventListener('load', () => {
+    const introSplash = document.getElementById('introSplash');
+    const mainContent = document.getElementById('mainContent');
+
+    setTimeout(() => {
+        introSplash.classList.add('fade-out');
+        setTimeout(() => {
+            introSplash.style.display = 'none';
+            mainContent.style.display = 'block';
+           
+             // Trigger stats animation when hero stats are visible
+   animateStats();
+        }, 1000);
+    }, 1500); // Show splash for 2 seconds
+});
+ 
+
+
+    const images = [
+    'url("resources/bkg/blackmagic bkg.jpg")',
+    'url("resources/bkg/camera.webp")',
+    'url("resources/bkg/sony switcher bkg.jpg")',
+    'url("resources/bkg/switcher bkg.jpg")',
+    'url("resources/bkg/audio bkg.jpg")',
+    'url("resources/bkg/pcr.jpg")'
+  ];
+
+  const bg1 = document.getElementById('bg1');
+  const bg2 = document.getElementById('bg2');
+
+  let current = bg1;
+  let next = bg2;
+  let index = 0;
+
+  // Initial image
+  current.style.backgroundImage = images[index];
+  current.style.opacity = 1;
+  current.style.transform = 'translateX(0)';
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+
+    // Next image setup: slide in from right with faster parallax
+    next.style.backgroundImage = images[index];
+    next.style.opacity = 1;
+    next.style.transform = 'translateX(0)';
+
+    // Current image: slide out to left slowly
+    current.style.opacity = 0;
+    current.style.transform = 'translateX(-10%)';
+
+    // After transition, reset current for reuse
+    setTimeout(() => {
+      current.style.transition = 'none';
+      current.style.opacity = 0;
+      current.style.transform = 'translateX(10%)'; // reset from right
+
+      // Swap current and next
+      [current, next] = [next, current];
+
+      // Re-enable transitions
+      setTimeout(() => {
+        current.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
+      }, 50);
+    }, 1500); // matches transition time
+  }, 4000); // total cycle (3s visible + 1s transition)
+
+
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for anchor links
@@ -69,6 +140,30 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
     }
+                const startInput = document.getElementById('start');
+                 const endInput = document.getElementById('end');
+
+                                // Auto-open date picker on click
+                [startInput, endInput].forEach(input => {
+                    input.addEventListener('click', () => {
+                    if (input.showPicker) {
+                        input.showPicker(); // Opens native picker
+                    } else {
+                        input.focus(); // Fallback for browsers without showPicker()
+                    }
+                    });
+                });
+
+            // When the start date changes, update the minimum end date
+            startInput.addEventListener('change', () => {
+                endInput.min = startInput.value;
+            });
+
+            // Optional: when end date changes, limit start date max
+            endInput.addEventListener('change', () => {
+                startInput.max = endInput.value;
+            });
+
 
     // Service cards animation on scroll
     const observerOptions = {
@@ -112,11 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     stat.textContent = Math.floor(currentNumber) + (isPlus ? '+' : '');
                 }
-            }, 40);
+            }, 60);
         });
     }
 
-    // Trigger stats animation when hero stats are visible
+   // Trigger stats animation when hero stats are visible
     const heroStats = document.querySelector('.hero-stats');
     if (heroStats) {
         const statsObserver = new IntersectionObserver(function(entries) {
@@ -239,56 +334,9 @@ function validateForm(form) {
     return isValid;
 }
 
-// Enhanced mobile menu styles
-// const style = document.createElement('style');
-// style.textContent = `
-//     @media (max-width: 768px) {
-//         .nav {
-//             position: absolute;
-//             top: 10%;
-//             width: max-content;
-//             left: 0;
-//             right: 0;
-//             background: white;
-//             display: flex;
-//             flex-direction: column;
-//             padding: 1rem;
-//             box-shadow: var(--shadow-professional);
-//             transform: translateY(-20px);
-//             opacity: 0;
-//             visibility: hidden;
-//             transition: all 0.3s ease;
-//         }
-        
-//         .nav.nav-open {
-//         display: flex;
-//         flex-direction: column;
-//         position: absolute;
-//         top: 5.2rem;
-//         left: 0rem;
-//             transform: translateY(0);
-//             opacity: 1;
-//             visibility: visible;
-//         }
-        
-//         .mobile-menu-btn.active span:nth-child(1) {
-//             transform: rotate(45deg) translate(5px, 5px);
-//         }
-        
-//         .mobile-menu-btn.active span:nth-child(2) {
-//             opacity: 0;
-//         }
-        
-//         .mobile-menu-btn.active span:nth-child(3) {
-//             transform: rotate(-45deg) translate(7px, -6px);
-//         }
-//     }
-    
-//     .notification {
-//         font-family: inherit;
-//     }
-// `;
-// document.head.appendChild(style);
+
+
+
 
 // Update year in footer
   document.getElementById("year").textContent = new Date().getFullYear();

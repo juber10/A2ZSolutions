@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- Intro Splash Screen -->
+<div id="introSplash">
+  <div class="intro-content">
+    <img src="resources/Accessories-images/a2z logo.png" alt="A2Z Solutions Logo" class="intro-logo" />
+    <h1>Welcome to A2Z Solutions</h1>
+    <p>A one stop solution to Your <strong>Broadcast Production</strong></p>
+  </div>
+</div>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -50,7 +58,10 @@
     
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
+        <div class="hero-background">
+            <div class="bg-layer" id="bg1"></div>
+              <div class="bg-layer" id="bg2"></div>
+        </div>
         <div class="hero-overlay"></div>
         
         <div class="container hero-container">
@@ -305,10 +316,11 @@
                         <input type="email" name="email" placeholder="Email Address" class="form-input" required>
                         <input type="tel" name="phone" placeholder="Phone Number" class="form-input">
                         <input type="text" name="company" placeholder="Company/Organization" class="form-input">
-                        <input type="date" name="event_date" placeholder="Event Date" class="form-input">
+                        <input type="date" name="event_date_start" id="start" placeholder="Event Date" class="form-input" title="Begin Date">
+                        <input type="date" name="event_date_end" id="end" placeholder="Event Date" class="form-input" title="Finish Date">
                         <textarea 
                             name="project_details"
-                            placeholder="Project Details - Tell us about your equipment needs, event type, duration, and any specific requirements..."
+                            placeholder="Project Details - Tell us about your equipment needs, event type, and any specific requirements..."
                             class="form-textarea"
                             rows="5"
                         ></textarea>
@@ -321,15 +333,6 @@
         </div>
     </section>
 
-    <!-- Top Brands -->
-    <section>
-        
-    </section>
-
-    <!-- Clients -->
-     <section>
-
-     </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -339,9 +342,7 @@
                 <div class="footer-company">
                     <div class="footer-logo">
                         <div class="footer-logo-icon">
-                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                            </svg>
+                            <img src="resources/Accessories-images/a2z logo.png" alt="A2Zsolutions logo">
                         </div>
                         <div class="footer-logo-text">
                             <div class="footer-logo-title">A2Zsolutions FZE</div>
@@ -390,7 +391,7 @@
                         <h5>1st WareHouse</h5>
                         <li>📍 Shop no 03, Al Hoson Building, International City Phase 2, Dubai, UAE</li>
                         <h5>2st WareHouse</h5>
-                        <li>📍 Shop no 09,Lehbab Road, Al Madam, Sharjah, UAE</li>
+                        <li>📍 Shop no 09, Dubai - Hatta Road, Al Madam, Sharjah, UAE</li>
                         
                         <!-- <li>🕒 24/7 Emergency Support</li> -->
                     </ul>

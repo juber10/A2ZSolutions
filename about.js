@@ -1,16 +1,16 @@
 const grid = document.getElementById("grid");
 
 const videoSources = [
-  "/hexagon/videos/v1.mp4",
-  "/hexagon/videos/v2.mp4",
-  "/hexagon/videos/v3.mp4",
-  "/hexagon/videos/v4.mp4",
-  "/hexagon/videos/v5.mp4",
-  "/hexagon/videos/v6.mp4",
-  "/hexagon/videos/v7.mp4",
-  "/hexagon/videos/v8.mp4",
-  "/hexagon/videos/v9.mp4",
-  "/hexagon/videos/v6.mp4"
+  "/resources/intro-video/Intro.mp4",
+  // "/hexagon/videos/v2.mp4",
+  // "/hexagon/videos/v3.mp4",
+  // "/hexagon/videos/v4.mp4",
+  // "/hexagon/videos/v5.mp4",
+  // "/hexagon/videos/v6.mp4",
+  // "/hexagon/videos/v7.mp4",
+  // "/hexagon/videos/v8.mp4",
+  // "/hexagon/videos/v9.mp4",
+  // "/hexagon/videos/v6.mp4"
 ];
 
 // Settings
@@ -52,5 +52,40 @@ for (let r = 0; r < numRows; r++) {
         });
     }
 
+ // Stats counter animation
+    function animateStats() {
+        const stats = document.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+            const finalNumber = stat.textContent;
+            const isPlus = finalNumber.includes('+');
+            const numValue = parseInt(finalNumber.replace(/\D/g, ''));
+            
+            let currentNumber = 0;
+            const increment = numValue / 50; // Animate over 50 steps
+            const timer = setInterval(() => {
+                currentNumber += increment;
+                if (currentNumber >= numValue) {
+                    clearInterval(timer);
+                    stat.textContent = finalNumber;
+                } else {
+                    stat.textContent = Math.floor(currentNumber) + (isPlus ? '+' : '');
+                }
+            }, 30);
+        });
+    }
 
+   // Trigger stats animation when hero stats are visible
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statsObserver.observe(heroStats);
+    }
 

@@ -134,7 +134,7 @@
         color: var(--subtext);
       }
 
-      .stats {
+      .hero-stats {
         display: flex;
         justify-content: center;
         gap: 2rem;
@@ -143,7 +143,7 @@
         color: transparent;
       }
 
-      .stat-box {
+      .stat {
         background: var(--card-bg);
         padding: 2rem;
         border-radius: 10px;
@@ -152,16 +152,16 @@
         transition: transform 0.3s ease;
       }
 
-      .stat-box:hover {
+      .stat:hover {
         transform: translateY(-5px);
       }
 
-      .stat-box h2 {
+      .stat .stat-number {
         font-size: 2rem;
         color: var(--accent);
       }
 
-      .stat-box p {
+      .stat .stat-label {
         color: var(--subtext);
       }
 
@@ -326,7 +326,12 @@
     padding: 20px 0;
     perspective: 1000px;
   }
-
+.brand-carousel h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
   .carousel-track {
     display: flex;
     width: max-content;

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -197,6 +198,42 @@ body {
     width: 100%;
 }
 
+    /* Intro splash screen styles */
+#introSplash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#introSplash.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-logo {
+    position: relative;
+    max-width: 150px;
+}
+.intro-content h1{
+    font-size: 3rem;
+}
+.intro-content p{
+    font-size: 1.3rem;
+}
+
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -211,16 +248,28 @@ body {
 .hero-background {
     position: absolute;
     inset: 0;
-    background-image:  linear-gradient(180deg, rgba(15, 139, 255, 0.56) 0%, rgba(131, 0, 233, 0.24) 100%), url(resources/Accessories-images/blackmagic\ bkg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+/* Background layers */
+.bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%; /* slightly larger for parallax depth */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), transparent);
+    background: linear-gradient(to right, rgba(32, 64, 100, 0.5), rgba(37, 11, 29, 0.3), rgba(0, 0, 0, 0.8), transparent);
 }
 
 .hero-container {
@@ -270,10 +319,19 @@ body {
     gap: 2rem;
     max-width: 64rem;
     margin: 1rem auto;
+
+    
 }
 
 .stat {
+    padding: 10px 0;
     text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+  /* border: 1px solid rgba(255, 255, 255, 0.1, transparent); */
+  border-radius: 10px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(10%);
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); */
 }
 
 .stat-number {
@@ -294,7 +352,7 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: -3.5rem;
+    bottom: -6rem;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -567,11 +625,15 @@ body {
 .footer-logo-icon {
     width: 2.5rem;
     height: 2.5rem;
-    background: linear-gradient(135deg, var(--broadcast-accent), rgba(255, 255, 255, 0.2));
+    background: linear-gradient(-135deg, var(--broadcast-accent), rgba(255, 255, 255, 0.2));
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.footer-logo-icon img{
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .footer-logo-title {
@@ -782,7 +844,7 @@ body {
     
     }
 
-    
+
 
 
 
