@@ -242,7 +242,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 5rem 0 2rem 0;
+    padding: 5rem 0 5rem 0;
 }
 
 .hero-background {
@@ -310,7 +310,7 @@ body {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .hero-stats {
@@ -352,7 +352,7 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: -6rem;
+    bottom: -5rem;
     left: 50%;
     transform: translateX(-50%);
     color: white;
