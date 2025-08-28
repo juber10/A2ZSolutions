@@ -269,7 +269,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(32, 64, 100, 0.5), rgba(37, 11, 29, 0.3), rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8), transparent);
 }
 
 .hero-container {
