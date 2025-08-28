@@ -18,7 +18,8 @@
     --muted: hsl(214, 13%, 91%);
     --muted-foreground: hsl(215, 16%, 47%);
     --border: hsl(214, 13%, 91%);
-    
+    --card-bkg: hsl(214, 13%, 96%);
+
     /* Gradients */
     --broadcast-gradient: linear-gradient(135deg, hsl(215, 25%, 27%), hsl(217, 91%, 60%));
     --broadcast-hero-gradient: linear-gradient(135deg, hsl(215, 25%, 27%) 0%, hsl(215, 25%, 32%) 50%, hsl(217, 91%, 60%) 100%);
