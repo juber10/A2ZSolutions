@@ -433,6 +433,9 @@
 
 
             @media (max-width: 425px) {
+              header{
+                padding: 10px 5px;
+              }
               .nav{
                 padding: 0;
               }
@@ -458,13 +461,15 @@
           display: none;
           flex-direction: row;
           flex-wrap: wrap;
-          justify-content:center;
-          
-          
+          justify-content:center; 
+        }
+        .events-section{
+          padding: 0;
         }
         .client-grid{
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
         }
         .client-grid img {
     width: 100px;
@@ -475,12 +480,30 @@
     box-sizing: border-box;
     /* border-radius: 20px; */
 }
+.team-grid{
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: center;
+  align-items: stretch;
+    justify-content: center;
+}
    .carousel-track img {
     width: 90px;
     height: 50%;
     margin: 0 30px;
     transform: rotateY(0deg);
     transition: transform 0.3s ease;
+  }
+
+  .brand-carousel{
+    .brand-carousel {
+    overflow: hidden;
+    width: 100%;
+    background: var(--bg);
+    padding: 20px 0;
+    perspective: 1000px;
+  }
   }
       }
 

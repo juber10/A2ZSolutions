@@ -1,7 +1,7 @@
 const grid = document.getElementById("grid");
 
 const videoSources = [
-  "/resources/intro-video/Intro.mp4",
+  "/resources/intro-video/intro.mp4",
   // "/hexagon/videos/v2.mp4",
   // "/hexagon/videos/v3.mp4",
   // "/hexagon/videos/v4.mp4",
