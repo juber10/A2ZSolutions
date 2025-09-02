@@ -121,25 +121,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // const contactForm = document.getElementById('contactForm');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
+    //         // Get form data
+    //         const formData = new FormData(this);
+    //         const formObject = {};
+    //         formData.forEach((value, key) => {
+    //             formObject[key] = value;
+    //         });
             
-            // Show success message (you can replace this with actual form submission)
-            showNotification(`Thank you for your quote request! We'll get back to you within 24 hours.`, 'success');
+    //         // Show success message (you can replace this with actual form submission)
+    //         showNotification(`Thank you for your quote request! We'll get back to you within 24 hours.`, 'success');
 
-            // Reset form
-            this.reset();
-        });
-    }
+    //         // Reset form
+    //         this.reset();
+    //     });
+    // }
                 const startInput = document.getElementById('start');
                  const endInput = document.getElementById('end');
 
