@@ -1,12 +1,12 @@
 const grid = document.getElementById("grid");
 
-const videoSources = [
-  "/resources/intro-video/intro.mp4",
-  // "/hexagon/videos/v2.mp4",
-  // "/hexagon/videos/v3.mp4",
-  // "/hexagon/videos/v4.mp4",
-  // "/hexagon/videos/v5.mp4",
-  // "/hexagon/videos/v6.mp4",
+const imageSources = [
+  "/resources/accessories-images/125x ground.png",
+  "/resources/accessories-images/events 1.jpg",
+  "/resources/accessories-images/pcr.jpg",
+  "/resources/accessories-images/camera.webp",
+//   "/resources/accessories-images/audio.webp",
+//   "/resources/accessories-images/monitor.webp",
   // "/hexagon/videos/v7.mp4",
   // "/hexagon/videos/v8.mp4",
   // "/hexagon/videos/v9.mp4",
@@ -16,7 +16,7 @@ const videoSources = [
 // Settings
 const numRows = 3; // Number of rows in the grid
 const hexesPerRow = 5;
-let videoIndex = 0;
+let imageIndex = 0;
 
 for (let r = 0; r < numRows; r++) {
   const row = document.createElement("div");
@@ -27,17 +27,15 @@ for (let r = 0; r < numRows; r++) {
     const hex = document.createElement("div");
     hex.classList.add("hex");
 
-    const video = document.createElement("video");
-    video.src = videoSources[videoIndex % videoSources.length];
-    video.autoplay = true;
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
+    const image = document.createElement("img");
+    image.src = imageSources[imageIndex % imageSources.length];
+    image.alt = "Hexagon Image";
+    image.classList.add("hex-image")    ;
 
-    hex.appendChild(video);
+    hex.appendChild(image);
     row.appendChild(hex);
 
-    videoIndex++;
+    imageIndex++;
   }
 
   grid.appendChild(row);
