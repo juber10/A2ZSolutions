@@ -309,15 +309,15 @@
                             Tell us about your project and we'll provide a detailed quote within 24 hours.
                         </p>
                     </div>
-                    <form action="https://formspree.io/f/xanbbpwo" method="post" class="contact-form" id="contactForm">
+                    <form action="https://formspree.io/f/xanbbpwo" method="POST" class="contact-form" id="contactForm">
                         <div class="form-row">
                             <input type="text" name="first_name" placeholder="First Name" class="form-input" required>
                             <input type="text" name="last_name" placeholder="Last Name" class="form-input" required>
                         </div>
                         <input type="email" name="email" placeholder="Email Address" class="form-input" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" class="form-input">
-                        <input type="text" name="company" placeholder="Company/Organization" class="form-input">
-                        <input type="date" name="event_date_start" id="start" placeholder="Event Date" class="form-input" title="Begin Date">
+                        <input type="tel" name="phone" placeholder="Phone Number" class="form-input" required>
+                        <input type="text" name="company" placeholder="Company/Organization" class="form-input" required>
+                        <input type="date" name="event_date_start" id="start" placeholder="Event Date" class="form-input" title="Begin Date" required>
                         <input type="date" name="event_date_end" id="end" placeholder="Event Date" class="form-input" title="Finish Date">
                         <textarea 
                             name="project_details"
