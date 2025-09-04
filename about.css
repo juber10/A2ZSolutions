@@ -418,25 +418,29 @@
     transform: rotateX(0deg) rotateY(0deg) scale(1.05);
     box-shadow: 0 12px 30px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.3);
   }
-    .clients-logos {
-      gap: 20px;
-    }
-
-    .client {
-      width: 80px;
-    }
+  .client-grid{
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: center;
         }
+        .client-grid img {
+    width: 100px;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    background: #fff; 
+    border-radius: 50%;
+}
+   
+      }
 
-
-
-
-
-            @media (max-width: 425px) {
+      /* smaller mobile view */
+   @media (max-width: 425px) {
               header{
                 padding: 10px 5px;
               }
               .nav{
-                padding: 0;
+                padding: 10px;
               }
               .stats {
                 display: grid;
@@ -467,22 +471,21 @@
         }
         .client-grid{
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           justify-items: center;
         }
         .client-grid img {
     width: 100px;
     height: 100%;
     object-fit: contain;
-    background: var(--subtext);
     padding: 10px;
-    box-sizing: border-box;
-    /* border-radius: 20px; */
+    background: #fff; 
+    border-radius: 50%;
 }
 .team-grid{
   display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     text-align: center;
   align-items: stretch;
     justify-content: center;
@@ -520,7 +523,6 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 4px;
-      /* padding: 20px; */
       background: transparent;
     }
 
@@ -551,14 +553,76 @@
     }
     .client-grid{
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   .client-grid img{
-    width: 5em;
-    height: 5em;
-    padding: 0;
-    background: var(--text);
+     width: 100%;
+      height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    background: #fff; 
+    border-radius: 50%;
   }
 
   
       }
+      @media (max-width: 320px){
+              .logo img{
+                height: 30px;
+                width: auto;
+              }
+              .client-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  .client-grid img{
+     width: 100%;
+      height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    background: #fff; 
+    border-radius: 50%;
+  }
+  .mobile-hex-video-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+      background: transparent;
+    }
+
+    .mobile-hex {
+      width: 110px;
+      height: 110.74px; /* 100 * sqrt(3)/2 */
+      margin: 10.87px 4px;
+      clip-path: polygon(
+        50% 0%, 93% 25%, 93% 75%,
+        50% 100%, 7% 75%, 7% 25%
+      );
+      background: #222;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+    }
+
+    .mobile-hex video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mobile-hex:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+    .team-grid{
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+  align-items: stretch;
+    justify-content: center;
+}
+
+            }
