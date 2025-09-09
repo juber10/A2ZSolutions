@@ -24,7 +24,7 @@
 
     header {
       background: var(--primary);
-      padding: 1rem 2rem;
+      padding: 0.5rem 1rem;
       display: flex;
       width: 100%;
       position:fixed;
@@ -36,10 +36,12 @@
     .logo {
       display: flex;
       align-items: center;
+      justify-content: space-around;
     }
 
     .logo img {
       height: 40px;
+      width: 100%;
       margin-right: 10px;
     }
 

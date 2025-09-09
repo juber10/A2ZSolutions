@@ -26,7 +26,7 @@
 
       header {
         background: var(--primary);
-        padding: 1rem 2rem;
+        padding: 0.5rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -41,7 +41,7 @@
       }
 
       .logo img {
-        height: 40px;
+        height: 60px;
         margin-right: 10px;
       }
 
@@ -436,8 +436,9 @@
 
       /* smaller mobile view */
    @media (max-width: 425px) {
-              header{
-                padding: 10px 5px;
+              .logo img{
+                height: 40px;
+                width: auto;
               }
               .nav{
                 padding: 10px;
